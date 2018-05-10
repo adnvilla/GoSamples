@@ -1,0 +1,2 @@
+# GoSamples
+Ejemplos en Go
