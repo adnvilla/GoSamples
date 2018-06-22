@@ -48,7 +48,7 @@ Step #5 Go Tool Prof and generate pdf file
 
 Step #6 Happy Profiling :D
 
-![alt text](./SamplePdf.png "Sample Profiling")
+![alt text](./SamplePdf.PNG "Sample Profiling")
 
 
 
