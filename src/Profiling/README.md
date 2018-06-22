@@ -48,8 +48,11 @@ Step #5 Go Tool Prof and generate pdf file
 
 Step #6 Happy Profiling :D
 
+![alt text](./SamplePdf.png "Sample Profiling")
 
-Resources
+
+
+# Resources
 
 https://blog.golang.org/profiling-go-programs
 
