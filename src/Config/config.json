@@ -1,0 +1,5 @@
+{
+    "Users": ["UserA","UserB"],
+    "Groups": ["GroupA"],
+    "Name":"NameUser"
+}
