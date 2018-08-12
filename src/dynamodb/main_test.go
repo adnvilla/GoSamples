@@ -246,12 +246,17 @@ func TestReadItems(t *testing.T) {
 	// filt := expression.Name("year").Equal(expression.Value(year))
 
 	// Or we could get by ratings and pull out those with the right year later
-	filt := expression.Name("info.rating").GreaterThan(expression.Value(min_rating))
+	// filt := expression.Name("info.rating").GreaterThan(expression.Value(min_rating))
+	filter := FilterGreaterThan("info.rating", min_rating)
 
 	// Get back the title, year, and rating
-	proj := expression.NamesList(expression.Name("title"), expression.Name("year"), expression.Name("info.rating"))
+	// proj := expression.NamesList(expression.Name("title"), expression.Name("year"), expression.Name("info.rating"))
+	proj := ProjectionNames("title", "year", "info.rating")
 
-	expr, err := expression.NewBuilder().WithFilter(filt).WithProjection(proj).Build()
+	// expr, err := expression.NewBuilder().WithFilter(filt).WithProjection(proj).Build()
+	expr, err := expression.NewBuilder().
+		WithFilter(filter).
+		WithProjection(proj).Build()
 
 	if err != nil {
 		fmt.Println("Got error building expression:")
@@ -291,15 +296,16 @@ func TestReadItems(t *testing.T) {
 		}
 
 		// Which ones had a higher rating?
-		if item.Info.Rating > min_rating {
-			// Or it we had filtered by rating previously:
-			//   if item.Year == year {
-			num_items += 1
+		// if item.Info.Rating > min_rating {
+		// Or it we had filtered by rating previously:
+		//   if item.Year == year {
+		num_items += 1
 
-			fmt.Println("Title: ", item.Title)
-			fmt.Println("Rating:", item.Info.Rating)
-			fmt.Println()
-		}
+		fmt.Println("Title: ", item.Title)
+		fmt.Println("Year: ", item.Year)
+		fmt.Println("Rating:", item.Info.Rating)
+		fmt.Println()
+		// }
 	}
 
 	fmt.Println("Found", num_items, "movie(s) with a rating above", min_rating, "in", year)
