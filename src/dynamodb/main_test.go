@@ -69,7 +69,7 @@ func TestListAlltables(t *testing.T) {
 
 }
 
-func TestCreteTable(t *testing.T) {
+func TestCreateTable(t *testing.T) {
 	sess, err := GetSession()
 
 	// Create DynamoDB client
@@ -108,7 +108,7 @@ func TestCreteTable(t *testing.T) {
 	if err != nil {
 		fmt.Println("Got error calling CreateTable:")
 		fmt.Println(err.Error())
-		os.Exit(1)
+		return
 	}
 
 	fmt.Println("Created the table Movies in us-west-1")
