@@ -19,3 +19,4 @@ debug
 
 #Zip
 *.zip
+src/myservice/node_modules/
