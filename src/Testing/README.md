@@ -1,7 +1,7 @@
 # Go Testing
 
     go build
-    go test -coverprofile=cover.out
+    go test --coverprofile=cover.out
     go tool cover -html=cover.out -o coverage.html
 
 
