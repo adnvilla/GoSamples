@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+)
 
 func main() {
 	f()
@@ -10,6 +13,9 @@ func main() {
 func f() {
 	defer func() {
 		if r := recover(); r != nil {
+			if _, ok := r.(runtime.Error); ok {
+				panic(r)
+			}
 			fmt.Println("Recovered in f", r)
 		}
 	}()
