@@ -8,9 +8,10 @@ import (
 
 // Configuration schema
 type Configuration struct {
-	Users  []string
-	Groups []string
-	Name   string
+	Users             []string
+	Groups            []string
+	Name              string
+	ConnectionStrings map[string]string
 }
 
 func main() {
@@ -25,4 +26,6 @@ func main() {
 	}
 	fmt.Println(configuration.Users)
 	fmt.Println(configuration.Name)
+
+	fmt.Println(configuration.ConnectionStrings)
 }

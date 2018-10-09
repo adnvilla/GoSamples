@@ -1,5 +1,8 @@
 {
     "Users": ["UserA","UserB"],
     "Groups": ["GroupA"],
-    "Name":"NameUser"
+    "Name":"NameUser",
+    "ConnectionStrings":{
+        "NameUser":"asdadas"
+    }
 }
