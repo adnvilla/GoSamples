@@ -1,7 +1,7 @@
 # appveyor.yml
 build: off
 
-clone_folder: /usr/go/src/github.com/adnvilla/GoSamples
+clone_folder: /usr/go/src/github.com/adnvilla/GoSamples/
 
 environment:
   GOPATH: /usr/go/
